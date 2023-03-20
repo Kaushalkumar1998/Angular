@@ -1,0 +1,43 @@
+<mat-card class="login-from">
+  <mat-card-header class="header">
+    <h2>Login</h2>
+  </mat-card-header>
+  <mat-card-content class="content">
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>User Name*</mat-label>
+      <input matInput placeholder="Email" />
+      <mat-icon matSuffix>person</mat-icon>
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Password*</mat-label>
+      <input
+        matInput
+        placeholder="Password"
+        [type]="showPassword ? 'password' : 'text'"
+        name="password"
+        required
+      />
+
+      <mat-icon matSuffix (click)="visibility()">
+        {{ showPassword ? "visibility_off" : "visibility" }}
+      </mat-icon>
+    </mat-form-field>
+    <mat-divider></mat-divider>
+    <mat-divider inset vertical></mat-divider>
+    <button mat-button color="primary" class="btn">
+      <a href="registration" class="anc1">register</a>
+    </button>
+    <button mat-button color="primary" class="btn_2">
+      <a href="forgot-password" class="anc2">Forgot Password?</a>
+    </button>
+    <button
+      mat-stroked-button
+      class="btn_3"
+      type="submit"
+      id="submit"
+      (click)="submit()"
+    >
+      Login
+    </button>
+  </mat-card-content>
+</mat-card>
