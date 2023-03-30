@@ -1,0 +1,57 @@
+<mat-card>
+  <mat-card-content class="home">Home Page</mat-card-content>
+  <h2>Auto Complete Component</h2>
+  <div class="main">
+    <form class="example-form">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Number</mat-label>
+        <input
+          type="text"
+          placeholder="Pick one"
+          aria-label="Number"
+          matInput
+          [formControl]="myControl"
+          [matAutocomplete]="auto"
+        />
+        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+          <mat-option
+            *ngFor="let option of filteredOptions | async"
+            [value]="option"
+          >
+            {{ option }}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </form>
+    <form [formGroup]="stateForm" class="state">
+      <mat-form-field appearance="fill">
+        <mat-label>States Group</mat-label>
+        <input
+          type="text"
+          matInput
+          formControlName="stateGroup"
+          required
+          [matAutocomplete]="autoGroup"
+        />
+        <mat-autocomplete #autoGroup="matAutocomplete">
+          <mat-optgroup
+            *ngFor="let group of stateGroupOptions | async"
+            [label]="group.letter"
+          >
+            <mat-option *ngFor="let name of group.names" [value]="name">
+              {{ name }}
+            </mat-option>
+          </mat-optgroup>
+        </mat-autocomplete>
+      </mat-form-field>
+    </form>
+    <app-autocomplete></app-autocomplete>
+    <app-street></app-street>
+  </div>
+  <div>
+    <app-badges></app-badges>
+  </div>
+  <div>
+    <app-bootomsheet></app-bootomsheet>
+  </div>
+</mat-card>

@@ -6,5 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./forgotpassword.component.scss']
 })
 export class ForgotpasswordComponent {
+  canEdit = false;
+  message = "I am Read Only";
 
+  onEditClick() {
+    this.canEdit = !this.canEdit;
+
+    if (this.canEdit) {
+      this.message = 'you can edit me';
+    }
+    else {
+      this.message = "I am read only"
+    }
+
+  }
 }
