@@ -1,55 +1,103 @@
-
-.login-from{
-    width: 21%;
-    position: absolute;
-    top:50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-
+.loader{
+  position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: 99;
 }
-.main_toolbar{
-    
-    padding: 0;
-    margin: 0;
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-image: url(../../assets/img.jpg);
+  background-size: cover;
+  background-position: center;
+ // animation: animateBg 5s linear infinite;
 }
-.toolbar{
-    background: red;
-    text-align: center;
-    font-size: 25px;
-    height: 45px;
-    line-height: 45px;
+@keyframes animateBg {
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+.login-from {
+  width: 23%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid rgba(255,255,255,.5);
+  background: transparent;
+  backdrop-filter: blur(15px);
+}
+.main_toolbar {
+  padding: 0;
+  margin: 0;
+}
+.toolbar {
+  background: red;
+  text-align: center;
+  font-size: 25px;
+  height: 45px;
+  line-height: 45px;
+  width: 100%;
+}
+h2 {
+  font-weight: 700;
+  text-align: center;
+  margin-top: 10px;
+  color: white;
+}
+.example-full-width {
+  width: 100%;
+  
+}
+.mat-mdc-text-field-wrapper {
     width: 100%;
+    border: 2px solid white;}
+    .mat-mdc-form-field-has-icon-suffix .mat-mdc-text-field-wrapper {
+        padding-right: 0;
+        border: 2px solid white;
+    }
 
+
+
+
+
+ .lb{
+    color: white;
 }
-.header{
-    background: red;
-    color: #fff;
-    font-weight: 700;
+.content {
+  padding: 10px;
 }
-.example-full-width{
-    width: 100%;
+.btn {
+  margin-top: 5px;
+  padding-right: 5px;
+  border: 2px solid rgba(255,255,255,.5);
 }
-.content{
-    padding: 10px ;
+.anc1 {
+  color: blue;
+  text-decoration: none;
 }
-.btn{
-    margin-top: 5px;
-    padding-right: 5px;
+.btn_2 {
+  margin-top: 5px;
+  margin-left: 5px;
+  border: 2px solid rgba(255,255,255,.5);
 }
-.anc1{
-     color: blue;
-    text-decoration: none;
+.anc2 {
+  text-decoration: none;
+  color: green;
 }
-.btn_2{
-    margin-top:5px ;
+.btn_3 {
+  margin-top: 5px;
+  margin-left: 8px;
+  border: 2px solid rgba(255,255,255,.5);
 }
-.anc2{
-    text-decoration: none;
-    color: green;
+.icon{
+    color: white;
 }
-.btn_3{
-    margin-top:5px ;
-   
-    border-radius: 0;
-    margin-left: 8px;
+#submit{
+    border: 2px solid rgba(255,255,255,.5);   
+    color: white;
 }

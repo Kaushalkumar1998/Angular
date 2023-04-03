@@ -33,6 +33,11 @@ import { bottomsheetmainComponent } from './home/bottomsheetmain.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { CubeComponent } from './cube/cube.component';
 import { AngularJsonFormModule } from 'angular-json-form';
+import { MatSelectModule } from '@angular/material/select';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { NavComponent } from './nav/nav.component';
+import { InterceptorService } from './loader/interceptor.service';
 
 
 @NgModule({
@@ -48,7 +53,8 @@ import { AngularJsonFormModule } from 'angular-json-form';
     BadgesComponent,
     BottomsheetComponent,
     bottomsheetmainComponent,
-    CubeComponent
+    CubeComponent,
+    NavComponent
 
 
 
@@ -77,11 +83,16 @@ import { AngularJsonFormModule } from 'angular-json-form';
     MatListModule,
     MatSidenavModule,
     MatCheckboxModule,
-    AngularJsonFormModule
+    AngularJsonFormModule,
+    MatSelectModule,
+    HttpClientModule,
+    MatProgressBarModule,
 
 
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { } 
