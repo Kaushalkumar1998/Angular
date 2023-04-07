@@ -5,10 +5,14 @@
     left: 50%;
     transform: translate(-50%,-50%);
     border-radius: 30px;
+   // background: transparent;
+    backdrop-filter: blur(15px);
 }
 .main_main{
     height: 100%;
     background-color:#ccc;
+//background: black;
+    
 
 }
 .main_header{

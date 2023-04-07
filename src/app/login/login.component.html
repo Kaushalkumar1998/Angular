@@ -42,7 +42,7 @@
           />
           <mat-error
             *ngIf="
-              loginForm.get('password')!.hasError('password') &&
+              loginForm.get('password')!.hasError('pattern') &&
               !loginForm.get('password')!.hasError('required')
             "
             >Please enter a valid password</mat-error
@@ -89,9 +89,6 @@
         >
           Login
         </button>
-        <!-- <button class="btn_3" mat-stroked-button type="submit" id="submit">
-          Login
-        </button> -->
       </mat-card-content>
       <!-- <div *ngFor="let name of list" style="border: 1px solid red">
     <h1 *ngIf="name !== 'Pradeep'">{{ name }}</h1>

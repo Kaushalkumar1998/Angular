@@ -101,9 +101,13 @@
             </mat-icon>
             <mat-error
               *ngIf="
-                registerForm.get('password') &&
-                !registerForm.hasError('required')
+                registerForm.get('password')!.hasError('pattern') &&
+                !registerForm.get('password')!.hasError('required')
               "
+              >Please enter a valid password</mat-error
+            >
+            <mat-error
+              *ngIf="registerForm.get('password')!.hasError('required')"
             >
               Password is <strong>required</strong>
             </mat-error>
@@ -123,9 +127,13 @@
             </mat-icon>
             <mat-error
               *ngIf="
-                registerForm.get('confPassword') &&
-                !registerForm.hasError('required')
+                registerForm.get('confPassword')!.hasError('pattern') &&
+                !registerForm.get('confPassword')!.hasError('required')
               "
+              >Please enter a valid password</mat-error
+            >
+            <mat-error
+              *ngIf="registerForm.get('confPassword')!.hasError('required')"
             >
               Password is <strong>required</strong>
             </mat-error>
